@@ -4,7 +4,7 @@ object Main extends App {
   val robots = List(
     Robot(firstName = "Dolph", lastName = "The Robot", 553),
     Robot(firstName = "Sylvester", lastName = "The Robot", 554),
-    Robot(firstName = "Arnold", lastName = "The Terminator", 555),
+    Robot(firstName = "Arnold", lastName = "The Terminator", 555)
   )
 
   val filterRobot = Robot.filterRobot(robots)
