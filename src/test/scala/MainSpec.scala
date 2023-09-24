@@ -15,4 +15,20 @@ class MainSpec extends WordSpec with Matchers {
     val rusty = Robot(firstName = "Rusty", lastName = "The Robot", 232)
     rusty.description should be("Rusty The Robot is 232 years old")
   }
+
+  "The Robot companion object" should {
+    val (gumpy, rusty, chumpy) = (
+      Robot(firstName = "Gumpy", lastName = "The Robot", 233),
+      Robot(firstName = "Rusty", lastName = "The Robot", 234),
+      Robot(firstName = "Chumpy", lastName = "The Robot", 235)
+    )
+    "return a list of robots" in {
+      val ref = List(gumpy, rusty, chumpy)
+      Robot.filterRobot(ref) should be(List(rusty, chumpy))
+    }
+    "return an empty list if no robot in the list" in {
+      val ref = List(gumpy)
+      Robot.filterRobot(ref) should be(List.empty[Robot])
+    }
+  }
 }
